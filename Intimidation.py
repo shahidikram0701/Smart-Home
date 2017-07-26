@@ -10,11 +10,12 @@ from stat import *
 
 def send_sms(data):
     message = data
-    number = "8197062848" #to which number sms should be sent
+    number = "" #to which number sms should be sent
 
     if __name__ == "__main__":
-        username = "9620115502"
-        passwd = "Q9639K"
+        # Create an account on the website way2sms and use the login credentials below
+        username = ""
+        passwd = ""
 
         message = "+".join(message.split(' '))
 
@@ -54,12 +55,12 @@ while True:
         send_sms(data.decode("utf-8"))
         msg = MIMEText(data.decode("utf-8"))
         msg['Subject'] = 'EMERGENCY';
-        msg['From'] = 'mpcaproject@gmail.com'
-        msg['To'] = 'mpcaproject@gmail.com'
+        msg['From'] = '' # From which email address the mail has to be sent.
+        msg['To'] = '' # To which mail address the mail has to be sent.
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
         server.starttls()
-        server.login("mpcaproject@gmail.com", "smarthome")
+        server.login("", "") # From email address and password of that mail address.
         server.send_message(msg)
         server.close()
         print(data)
